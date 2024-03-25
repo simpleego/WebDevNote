@@ -1,1 +1,5 @@
+1. @RequestParam 어노테이션 활용
+>GET방식으로 넘어온 URI의 queryString을 받기에 적절해
 
+>>예를 들어 http://localhost:8080/reservation/api/reservations?reservationEmail=test@naver.com 이런 URI가 있다고 치면
+Controller 단에서
