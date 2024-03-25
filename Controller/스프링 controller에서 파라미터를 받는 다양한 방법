@@ -3,3 +3,19 @@
 
 >>예를 들어 http://localhost:8080/reservation/api/reservations?reservationEmail=test@naver.com 이런 URI가 있다고 치면
 Controller 단에서
+
+
+```java
+@RestController
+@RequestMapping(path = "/api")
+public class ReservationsApiController {
+ 
+    // email로 예약 내역 조회
+    @GetMapping(path = "/reservations")
+    public Response<List<String>> getReservations(
+            @RequestParam(value = "reservationEmail",required = false) String reservationEmail) {
+ 
+        return reservationService.getReservationByEmail(reservationEmail);
+    }
+
+```
